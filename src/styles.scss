@@ -1,0 +1,129 @@
+@import "app/theme/styles/spinner"; 
+@import '../node_modules/swiper/swiper-bundle.min.css';
+@import "app/theme/styles/base";
+@import "app/theme/styles/spaces";
+@import "app/theme/styles/theme";
+@import "app/theme/styles/rtl";
+
+
+// .ct_height_46 {
+//     padding-top: 46px !important;
+// }
+
+.main-toolbar-fixed mat-toolbar#main-toolbar {
+    height: 130px;
+}
+// .main-toolbar-fixed .theme-container.ct_height_46 {
+//     height: 0px !important;
+//     padding-top: 0px !important;
+// }
+// .app.main-toolbar-fixed #main-toolbar {
+  
+//     background-color: #000 !important;
+// }
+
+// .app.main-toolbar-fixed  span.mdc-button__label {
+//     color: #fff !important;
+// }
+
+// .app.main-toolbar-fixed mat-toolbar#main-toolbar .theme-container.ct_height_46 .horizontal-menu a.mdc-button.mat-mdc-button span.mdc-button__label {
+//     color: #fff !important;
+// }
+
+// .app.main-toolbar-fixed mat-toolbar#main-toolbar .theme-container.ct_height_46 .horizontal-menu .mat-mdc-button>.mat-icon{
+//     color: #fff !important;
+// }
+
+.app.blue .mat-mdc-raised-button.mat-primary {
+    --mdc-protected-button-container-color: #28bca2;
+}
+
+.app.blue main.content-offset-to-top .main-content-header {
+    border-top: 5px solid #28bca2;
+}
+
+.app.blue .primary-color {
+    color: #28bca2;
+}
+
+.mat-mdc-outlined-button:not(:disabled) {
+    color: #28bca2 !important;
+}
+
+.app.blue #top-toolbar {
+    background: #28bca2 !important;
+}
+
+.app.blue .section .section-title:after, .app.blue .section.testimonials .swiper-pagination-bullet-active {
+    background-color: #28bca2;
+}
+
+.app.blue .mat-icon.mat-primary {
+    --mat-icon-color: #28bca2;
+}
+.app.blue .mat-mdc-button.mat-primary {
+    --mdc-text-button-label-text-color: #28bca2;
+    --mat-text-button-state-layer-color: #28bca2;
+}
+
+.app.blue .bg-primary {
+    background: #28bca2;
+    color: white;
+}
+.app.blue header.toolbar-1.has-bg-image:not(.main-toolbar-fixed) .horizontal-menu .mat-mdc-button.horizontal-active-link, .app.blue header.toolbar-1.has-bg-video:not(.main-toolbar-fixed) .horizontal-menu .mat-mdc-button.horizontal-active-link {
+    background: rgb(40 188 162 / 38%);
+}
+
+.app.blue .horizontal-active-link {
+    background: rgba(0, 0, 0, 0.04);
+    color: #28bca2;
+}
+
+.app.blue .mat-mdc-fab.mat-primary, .app.blue .mat-mdc-mini-fab.mat-primary {
+    --mdc-fab-container-color: #30bfa6;
+  
+}
+.app.blue .mat-mdc-unelevated-button.mat-primary {
+    --mdc-filled-button-container-color: #28bca2;
+  
+}
+
+.app.blue .property-item .title a:hover, .app.blue .compare-item .title a:hover {
+    color: #28bca2;
+}
+
+
+.app.blue {
+    --mat-option-selected-state-label-text-color: #28bca2;
+    --mdc-filled-text-field-caret-color: #28bca2;
+    --mdc-filled-text-field-focus-active-indicator-color: #28bca2;
+    --mdc-filled-text-field-focus-label-text-color: rgba(40, 188, 162, 0.87);
+    
+    --mdc-outlined-text-field-caret-color: #28bca2;
+    --mdc-outlined-text-field-focus-outline-color: #28bca2;
+
+}
+:root {
+    --swiper-theme-color: #28bca2;
+}
+.app.blue .mat-badge-content{
+    background-color: #28bca2;
+}
+.mat-step-icon-selected {
+    background-color:#28bca2;
+}
+
+.app.blue .mat-mdc-icon-button.mat-primary {
+    --mdc-icon-button-icon-color: #28bca2 !important;
+    --mat-icon-button-state-layer-color: #28bca2 !important;
+}
+.mat-step-icon-selected {
+    background-color: #28bca2 !important;
+}
+.mat-step-icon-state-edit{
+    background-color: #28bca2 !important;
+}
+
+.app.blue .mat-mdc-raised-button.mat-accent {
+    --mdc-protected-button-container-color: #28bca2;
+}
