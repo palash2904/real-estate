@@ -1,5 +1,5 @@
 <mat-toolbar id="top-toolbar" class="top-toolbar">
-  <div class="theme-container "  fxLayout="row" fxLayoutAlign="space-between center">
+  <div class="theme-container " fxLayout="row" fxLayoutAlign="space-between center">
     <!-- <div fxLayout="row" fxLayoutAlign="start center">
       <span fxHide="false" fxHide.gt-sm>
         <button mat-button (click)="sidenavToggle()">
@@ -23,10 +23,10 @@
       <app-horizontal-menu [menuParentId]="0"></app-horizontal-menu>
     </div>
     <div fxLayout="row" fxLayoutAlign="start center">
-      <a routerLink="/account/favorites" mat-icon-button matTooltip="Favorites" fxShow="false" fxShow.gt-md>
+      <!-- <a routerLink="/account/favorites" mat-icon-button matTooltip="Favorites" fxShow="false" fxShow.gt-md>
         <mat-icon [matBadge]="appService.Data.favorites.length" [matBadgeHidden]="appService.Data.favorites.length == 0"
           matBadgeSize="small" matBadgeColor="warn" aria-hidden="false">favorite_border</mat-icon>
-      </a>
+      </a> -->
       <!-- <a routerLink="/compare" mat-icon-button matTooltip="Compare list" fxShow="false" fxShow.gt-md class="mr-3 ml-2">
           <mat-icon [matBadge]="appService.Data.compareList.length" 
                     [matBadgeHidden]="appService.Data.compareList.length == 0" 

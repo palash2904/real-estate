@@ -5,23 +5,23 @@ import { AppService } from 'src/app/app.service';
 import { AppSettings, Settings } from 'src/app/app.settings';
 
 @Component({
-  selector: 'app-header-map',
-  templateUrl: './header-map.component.html',
-  styleUrls: ['./header-map.component.scss']
+    selector: 'app-header-map',
+    templateUrl: './header-map.component.html',
+    styleUrls: ['./header-map.component.scss']
 })
 export class HeaderMapComponent implements OnInit {
     @Input('locations') locations: Array<any> = [];
-    @Input('contentOffsetToTop') contentOffsetToTop: boolean = false; 
+    @Input('contentOffsetToTop') contentOffsetToTop: boolean = false;
     @Input('fullscreen') fullscreen: boolean = false;
     @ViewChild(GoogleMap) map: GoogleMap;
     @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow;
     center: google.maps.LatLngLiteral = { lat: 40.678178, lng: -93.944158 };
     zoom: number = 5;
-    markerOptions: google.maps.MarkerOptions = { 
+    markerOptions: google.maps.MarkerOptions = {
         draggable: false,
         animation: google.maps.Animation.BOUNCE,
-    };    
-    mapStyles:any = [
+    };
+    mapStyles: any = [
         {
             "featureType": "all",
             "elementType": "labels.text.fill",
@@ -277,74 +277,75 @@ export class HeaderMapComponent implements OnInit {
                 }
             ]
         }
-    ]; 
+    ];
     mapOptions: google.maps.MapOptions = {
         styles: this.appSettings.settings.theme == 'orange-dark' ? this.mapStyles : null,
         mapTypeControl: false,
         fullscreenControl: true,
         streetViewControl: true
-    } 
+    }
     property: Property | null;
     public settings: Settings;
 
-    constructor(public appSettings:AppSettings, public appService:AppService) {
-        this.settings = this.appSettings.settings; 
+    constructor(public appSettings: AppSettings, public appService: AppService) {
+        this.settings = this.appSettings.settings;
     }
 
     ngOnInit(): void {
-        if(this.contentOffsetToTop){
+        if (this.contentOffsetToTop) {
             setTimeout(() => {
                 this.settings.contentOffsetToTop = this.contentOffsetToTop;
-            }); 
-        } 
+            });
+        }
     }
 
-    ngOnChanges(changes: {[propKey: string]: SimpleChange}){  
-        if(changes.locations){
-            if(!changes.locations.isFirstChange()){     
+
+    ngOnChanges(changes: { [propKey: string]: SimpleChange }) {
+        if (changes.locations) {
+            if (!changes.locations.isFirstChange()) {
                 //reset map position on filter
-                this.zoom = 5; 
-                this.center = { lat: 40.678178, lng: -93.944158 }; 
-                this.markerOptions.animation = google.maps.Animation.BOUNCE;  
+                this.zoom = 5;
+                this.center = { lat: 40.678178, lng: -93.944158 };
+                this.markerOptions.animation = google.maps.Animation.BOUNCE;
                 setTimeout(() => {
-                    this.markerOptions = {...this.markerOptions, animation: null}
+                    this.markerOptions = { ...this.markerOptions, animation: null }
                 }, 1000);
-            } 
-        }  
+            }
+        }
     }
 
-    ngOnDestroy(){  
+    ngOnDestroy() {
         setTimeout(() => {
             this.settings.contentOffsetToTop = false;
-        });  
-    } 
-
-    onMapReady() { 
-        setTimeout(() => {
-            this.markerOptions = {...this.markerOptions, animation: null}
-        }, 1000);
-    } 
-
-    onMapClick(e: any) {
-        console.log(e); 
+        });
     }
 
-    onMarkerClick(e: any, propertyId: number, marker: MapMarker) { 
+    onMapReady() {
+        setTimeout(() => {
+            this.markerOptions = { ...this.markerOptions, animation: null }
+        }, 1000);
+    }
+
+    onMapClick(e: any) {
+        console.log(e);
+    }
+
+    onMarkerClick(e: any, propertyId: number, marker: MapMarker) {
         this.center = { lat: e.latLng.lat(), lng: e.latLng.lng() };
-        this.infoWindow.open(marker);  
-        if(this.zoom < 11){
+        this.infoWindow.open(marker);
+        if (this.zoom < 11) {
             this.zoom = 11;
         }
         this.property = null;
         setTimeout(() => {
             this.appService.getPropertyById(propertyId).subscribe(res => {
-                this.property = res;  
-            }); 
-        }, 500);  
+                this.property = res;
+            });
+        }, 500);
     }
 
-    onZoomChanged() { 
+    onZoomChanged() {
         this.zoom = this.map.getZoom()!;
-    } 
+    }
 
 }

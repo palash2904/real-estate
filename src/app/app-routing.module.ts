@@ -4,6 +4,7 @@ import { PagesComponent } from './pages/pages.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LockScreenComponent } from './pages/lock-screen/lock-screen.component';
 import { AuthGuard } from './auth.guard';
+import { PropertyFilterComponent } from './pages/property-filter/property-filter.component';
 
 export const routes: Routes = [
   // {
@@ -32,6 +33,7 @@ export const routes: Routes = [
   //{ path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule) },
   { path: 'landing', loadChildren: () => import('./pages/landing/landing.module').then(m => m.LandingModule) },
   { path: 'lock-screen', component: LockScreenComponent },
+  { path:'property-filter', component: PropertyFilterComponent},
   { path: '**', component: NotFoundComponent }
 ];
 

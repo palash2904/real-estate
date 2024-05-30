@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.fb.group({
       username: [null, Validators.compose([Validators.required, Validators.minLength(6)])],
       password: [null, Validators.compose([Validators.required, Validators.minLength(6)])],
-      rememberMe: false
+      //rememberMe: false
     });
   }
 

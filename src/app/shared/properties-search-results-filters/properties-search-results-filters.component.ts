@@ -12,7 +12,7 @@ export class PropertiesSearchResultsFiltersComponent implements OnInit {
 
   ngOnInit() { }
 
-  public remove(field){
+  public remove(field) {
     this.onRemoveSearchField.emit(field);
   }
 

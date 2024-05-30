@@ -8,13 +8,13 @@
                 (mapClick)="onMapClick($event)"
                 (zoomChanged)="onZoomChanged()"
                 (idle)="onMapReady()">
-        <map-marker #marker="mapMarker"
+        <!-- <map-marker #marker="mapMarker"
                     *ngFor="let location of locations; let i = index"
                     [position]="{ lat: location.lat, lng: location.lng }"
                     [options]="markerOptions"
-                    (mapClick)="onMarkerClick($event, location.propertyId, marker)"></map-marker>
+                    (mapClick)="onMarkerClick($event, location.propertyId, marker)"></map-marker> -->
  
-        <map-info-window> 
+        <!-- <map-info-window> 
             <ng-container *ngIf="property; else mapSpinner">
                 <a [routerLink]="['/properties', property.id]" class="text-center">
                     <img [src]="property.gallery[0].small" alt="image" class="d-block w-100"> 
@@ -34,7 +34,7 @@
                     <mat-spinner color="warn"></mat-spinner>
                 </div>
             </ng-template>
-        </map-info-window>
+        </map-info-window> -->
      
     </google-map>
 
