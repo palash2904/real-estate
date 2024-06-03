@@ -10,10 +10,10 @@
     <span>{{ menuItem.title | translate }}</span>
   </a>
 
-  <a *ngIf="menuItem.hasSubMenu && menuItem.parentId == 0" mat-button [matMenuTriggerFor]="menu"> 
+  <a *ngIf="menuItem.hasSubMenu && menuItem.parentId == 0" mat-button [matMenuTriggerFor]="menu" (click)="onMenuClick(menuItem)"> 
     <span>{{ menuItem.title | translate }}</span><mat-icon class="caret" iconPositionEnd>arrow_drop_down</mat-icon> 
   </a>
-
+  
   <a *ngIf="menuItem.hasSubMenu && menuItem.parentId != 0" mat-menu-item [matMenuTriggerFor]="menu"> 
     <span>{{ menuItem.title | translate }}</span> 
   </a> 
@@ -23,3 +23,38 @@
   </mat-menu>
     
 </ng-container>
+
+<!-- <div class="ct_navbar_link ">
+ 
+  <ul class="ct_nav_active">
+    <div class="ct_close_icon">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+    <li>
+      <a href="#">Home</a>
+    </li>
+    <li>
+      <a href="#">Properties</a>
+    </li>
+    <li class="ct_custum_dropdown">
+      <a >Pages </a><i class="fa-solid fa-chevron-down" (click)="toggleNotificationDrop()"></i>
+      <ul class="ct_dropdown_list ct_drop_show" *ngIf="showNotificationDrop">
+        <li><a href="#">Agents</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Register</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Contact</a>
+    </li>
+    <li>
+      <a href="#">About Us</a>
+    </li>
+  </ul>
+
+</div>
+<div class="ct_toggle_icon mr-3">
+  <i class="fa-solid fa-bars "></i>
+</div> -->
+
+

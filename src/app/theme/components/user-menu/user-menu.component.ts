@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/app.service';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-user-menu',
@@ -8,9 +9,13 @@ import { AppService } from 'src/app/app.service';
 })
 export class UserMenuComponent implements OnInit {
 
-  constructor(public appService:AppService) { }
+  constructor(public appService:AppService, private service: SharedService) { }
 
   ngOnInit() {
+  }
+
+  logout(){
+    this.service.logout();
   }
 
 }
